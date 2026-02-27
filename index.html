@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タクヤ | AI×副業で月5万を作る30代サラリーマン</title>
+    <meta name="description" content="30代サラリーマンがAIを活用して副業で月5万円を稼ぐリアルな実践記。ChatGPT・生成AI活用術、副業ノウハウを発信中。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🤖 AI × Side Hustle</div>
+            <h1 class="hero-title">
+                <span class="gradient-text">AIを武器に</span><br>
+                <span class="hero-subtitle-line">月5万の副収入を作る</span>
+            </h1>
+            <p class="hero-description">
+                33歳・都内メーカー勤務のサラリーマン。<br>
+                残業月40時間でも、AIを使えば副業はできる。<br>
+                <strong>リアルな実践記録</strong>をすべて公開します。
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="47">0</span><span class="stat-unit">万円</span>
+                    <span class="stat-label">累計収益</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="892">0</span><span class="stat-unit">時間</span>
+                    <span class="stat-label">AI活用時間</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="156">0</span><span class="stat-unit">本</span>
+                    <span class="stat-label">コンテンツ数</span>
+                </div>
+            </div>
+            <a href="#links" class="cta-button">
+                <span>コンテンツを見る</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17l9.2-9.2M17 17V7.8M17 7.8H7.8"/>
+                </svg>
+            </a>
+        </div>
+        <div class="hero-visual">
+            <div class="avatar-container">
+                <img src="profile_avatar.png" alt="タクヤ" class="avatar-img" id="avatarImg">
+                <div class="avatar-glow"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-tag">About Me</div>
+            <h2 class="section-title">このサイトについて</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">💼</div>
+                    <h3>普通のサラリーマン</h3>
+                    <p>都内メーカーの営業職。年収480万。特別なスキルなし。プログラミング未経験。そんな「普通」から始めました。</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🤖</div>
+                    <h3>AIに出会って変わった</h3>
+                    <p>ChatGPTを触った日が転機。「これ、副業に使えるじゃん」。その直感を信じて行動した結果を全公開しています。</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">📊</div>
+                    <h3>データで語る</h3>
+                    <p>「月100万！」みたいな話はしません。リアルな数字、失敗した施策、改善プロセスをすべて記録しています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="roadmap" id="roadmap">
+        <div class="container">
+            <div class="section-tag">Roadmap</div>
+            <h2 class="section-title">AI副業ロードマップ</h2>
+            <p class="section-description">僕が実践して見つけた、再現性のある5つのステップ</p>
+            <div class="roadmap-timeline">
+                <div class="roadmap-item" data-step="01">
+                    <div class="roadmap-content">
+                        <h3>AIツールを使い倒す</h3>
+                        <p>ChatGPT, Claude, Gemini... まずは無料で"AIリテラシー"を身につける。ここに投資する時間が一番リターンが大きい。</p>
+                        <span class="roadmap-period">Week 1-2</span>
+                    </div>
+                </div>
+                <div class="roadmap-item" data-step="02">
+                    <div class="roadmap-content">
+                        <h3>発信を始める</h3>
+                        <p>X（Twitter）で学びをアウトプット。noteで体系的にまとめる。「教える」ことで自分の理解も深まる。</p>
+                        <span class="roadmap-period">Week 3-4</span>
+                    </div>
+                </div>
+                <div class="roadmap-item" data-step="03">
+                    <div class="roadmap-content">
+                        <h3>最初の1円を稼ぐ</h3>
+                        <p>noteの有料記事、ココナラでのAI活用コンサル。最初の収益は金額じゃない、「自分で稼げた」という体験が重要。</p>
+                        <span class="roadmap-period">Month 2</span>
+                    </div>
+                </div>
+                <div class="roadmap-item" data-step="04">
+                    <div class="roadmap-content">
+                        <h3>仕組み化する</h3>
+                        <p>コンテンツ制作のテンプレ化、AI自動化ワークフロー構築。「作業」を減らし「仕組み」を増やすフェーズ。</p>
+                        <span class="roadmap-period">Month 3-4</span>
+                    </div>
+                </div>
+                <div class="roadmap-item" data-step="05">
+                    <div class="roadmap-content">
+                        <h3>月5万の壁を超える</h3>
+                        <p>複数の収入源を組み合わせ、安定して月5万円を確保。ここまで来たら次のステージへ。</p>
+                        <span class="roadmap-period">Month 5-6</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="links" id="links">
+        <div class="container">
+            <div class="section-tag">Links</div>
+            <h2 class="section-title">コンテンツ一覧</h2>
+            <div class="links-grid">
+                <a href="#" class="link-card" id="link-note" target="_blank">
+                    <div class="link-icon">📝</div>
+                    <div class="link-info">
+                        <h3>note</h3>
+                        <p>AI副業の実践記録と有料ノウハウを公開中</p>
+                    </div>
+                    <div class="link-arrow">→</div>
+                </a>
+                <a href="#" class="link-card" id="link-x" target="_blank">
+                    <div class="link-icon">𝕏</div>
+                    <div class="link-info">
+                        <h3>X（Twitter）</h3>
+                        <p>毎日のAI活用TIPSと副業の裏側を発信</p>
+                    </div>
+                    <div class="link-arrow">→</div>
+                </a>
+                <a href="#" class="link-card featured" id="link-free" target="_blank">
+                    <div class="link-badge">🎁 無料</div>
+                    <div class="link-icon">📘</div>
+                    <div class="link-info">
+                        <h3>AI副業スタートガイド</h3>
+                        <p>完全初心者のための7日間プログラム（無料note記事）</p>
+                    </div>
+                    <div class="link-arrow">→</div>
+                </a>
+                <a href="#" class="link-card premium" id="link-paid" target="_blank">
+                    <div class="link-badge">⭐ 人気No.1</div>
+                    <div class="link-icon">🔥</div>
+                    <div class="link-info">
+                        <h3>ChatGPTで月5万稼ぐ完全マニュアル</h3>
+                        <p>プロンプト50選＋収益化テンプレ付き（有料note）</p>
+                    </div>
+                    <div class="link-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial / Social Proof -->
+    <section class="social-proof" id="proof">
+        <div class="container">
+            <div class="section-tag">Real Results</div>
+            <h2 class="section-title">実績と数字</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-month">2026年1月</div>
+                    <div class="result-amount">¥32,400</div>
+                    <div class="result-breakdown">
+                        <span>note有料記事: ¥18,200</span>
+                        <span>ココナラ: ¥8,700</span>
+                        <span>X収益化: ¥5,500</span>
+                    </div>
+                </div>
+                <div class="result-card highlight">
+                    <div class="result-month">2026年2月（進行中）</div>
+                    <div class="result-amount">¥51,800</div>
+                    <div class="result-breakdown">
+                        <span>note有料記事: ¥28,300</span>
+                        <span>ココナラ: ¥12,500</span>
+                        <span>X収益化: ¥11,000</span>
+                    </div>
+                    <div class="result-badge">🎉 月5万達成！</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-card">
+                <h2>まずは<span class="gradient-text">無料ガイド</span>から始めよう</h2>
+                <p>AI副業の始め方を7日間で学べる完全ガイド。<br>今すぐnoteで無料公開中。</p>
+                <a href="#" class="cta-button large" id="cta-main">
+                    <span>無料ガイドを読む</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 タクヤ｜AI×副業 All rights reserved.</p>
+            <p class="footer-note">※ 当サイトの収益情報は個人の実績であり、結果を保証するものではありません。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

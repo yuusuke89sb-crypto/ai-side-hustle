@@ -1,0 +1,694 @@
+/* ======================================
+   CSS Variables & Reset
+   ====================================== */
+:root {
+    --primary: #4F46E5;
+    --primary-light: #818CF8;
+    --primary-dark: #3730A3;
+    --accent: #06B6D4;
+    --accent-light: #67E8F9;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --bg-dark: #0B0F1A;
+    --bg-card: #131829;
+    --bg-card-hover: #1A2038;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --border: rgba(255, 255, 255, 0.06);
+    --glow: rgba(79, 70, 229, 0.4);
+    --font-ja: 'Noto Sans JP', sans-serif;
+    --font-en: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-ja);
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ======================================
+   Particles Canvas
+   ====================================== */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ======================================
+   Hero Section
+   ====================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 80px 24px;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(79, 70, 229, 0.15);
+    border: 1px solid rgba(79, 70, 229, 0.3);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-family: var(--font-en);
+    font-weight: 600;
+    color: var(--primary-light);
+    margin-bottom: 24px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle-line {
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: 32px;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-description strong {
+    color: var(--accent-light);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.stat-number {
+    font-family: var(--font-en);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.stat-unit {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-left: 2px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px var(--glow);
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px var(--glow);
+}
+
+.cta-button.large {
+    padding: 20px 48px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+}
+
+/* Avatar */
+.hero-visual {
+    flex-shrink: 0;
+    animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.avatar-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px;
+    border: 3px solid rgba(79, 70, 229, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.avatar-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-family: var(--font-en);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--primary-light), transparent);
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* ======================================
+   Section Styles
+   ====================================== */
+section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+}
+
+.section-tag {
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.section-description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 48px;
+}
+
+/* ======================================
+   About Section
+   ====================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 36px;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+    border-color: rgba(79, 70, 229, 0.2);
+}
+
+.about-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.about-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* ======================================
+   Roadmap Section
+   ====================================== */
+.roadmap-timeline {
+    position: relative;
+    padding-left: 60px;
+    margin-top: 48px;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--accent), transparent);
+}
+
+.roadmap-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.roadmap-item::before {
+    content: attr(data-step);
+    position: absolute;
+    left: -60px;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-card);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-en);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    z-index: 2;
+}
+
+.roadmap-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 32px;
+    transition: all 0.3s ease;
+}
+
+.roadmap-content:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(79, 70, 229, 0.2);
+}
+
+.roadmap-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.roadmap-content p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.roadmap-period {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 14px;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    border-radius: 100px;
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* ======================================
+   Links Section
+   ====================================== */
+.links-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 48px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px 28px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.link-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateX(8px);
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.link-card.featured {
+    border-color: rgba(16, 185, 129, 0.3);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), var(--bg-card));
+}
+
+.link-card.premium {
+    border-color: rgba(245, 158, 11, 0.3);
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), var(--bg-card));
+}
+
+.link-badge {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.link-icon {
+    font-size: 2rem;
+    min-width: 48px;
+    text-align: center;
+}
+
+.link-info h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.link-info p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.link-arrow {
+    margin-left: auto;
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.link-card:hover .link-arrow {
+    color: var(--primary-light);
+    transform: translateX(4px);
+}
+
+/* ======================================
+   Social Proof / Results Section
+   ====================================== */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.result-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 36px;
+    position: relative;
+}
+
+.result-card.highlight {
+    border-color: rgba(16, 185, 129, 0.4);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), var(--bg-card));
+}
+
+.result-month {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.result-amount {
+    font-family: var(--font-en);
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.result-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.result-breakdown span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    padding-left: 12px;
+    border-left: 2px solid rgba(79, 70, 229, 0.3);
+}
+
+.result-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 14px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--success);
+}
+
+/* ======================================
+   CTA Section
+   ====================================== */
+.cta-section {
+    padding: 80px 0;
+}
+
+.cta-card {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(6, 182, 212, 0.05));
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    border-radius: 32px;
+    padding: 64px 40px;
+}
+
+.cta-card h2 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 900;
+    margin-bottom: 16px;
+}
+
+.cta-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 32px;
+}
+
+/* ======================================
+   Footer
+   ====================================== */
+.footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.footer-note {
+    margin-top: 8px;
+    font-size: 0.7rem;
+}
+
+/* ======================================
+   Animations
+   ====================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.5); opacity: 0.3; }
+}
+
+/* ======================================
+   Scroll Reveal
+   ====================================== */
+.about-card,
+.roadmap-item,
+.link-card,
+.result-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-card.visible,
+.roadmap-item.visible,
+.link-card.visible,
+.result-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ======================================
+   Responsive
+   ====================================== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+        padding: 60px 20px;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .avatar-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .roadmap-timeline {
+        padding-left: 50px;
+    }
+
+    .roadmap-item::before {
+        left: -50px;
+        width: 40px;
+        height: 40px;
+        font-size: 0.7rem;
+    }
+
+    .roadmap-timeline::before {
+        left: 20px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .cta-card {
+        padding: 40px 24px;
+    }
+
+    .link-card {
+        padding: 20px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
